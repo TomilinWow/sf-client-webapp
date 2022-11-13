@@ -15,5 +15,5 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 100vh;
+    height: calc(100vh - 50px);
 }
