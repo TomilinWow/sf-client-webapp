@@ -5,12 +5,11 @@ import './Header.css';
 
 const Header = () => {
     const {user, photo, onClose} = useTelegram();
-    console.log('[hoto', photo)
-    console.log(user?.photo_url)
+    console.log(user?.photo)
     return (
         <div className={'header'}>
             <Button onClick={onClose}>Закрыть</Button>
-            <img src={user?.photo_url} alt='kek'/>
+            <img src={user?.photo} alt='kek'/>
             <span className={'username'}>
                 {user?.username}
             </span>
