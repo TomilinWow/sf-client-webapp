@@ -6,7 +6,7 @@ import './Home.css';
 const Home = () => {
     return (
         <div className={'home'}>
-            Добро пожаловать в webapp admin
+            Добро пожаловать в webapp client
         </div>
     );
 };
