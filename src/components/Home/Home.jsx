@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Home.css';
 import {useTelegram} from "../../hooks/useTelegram";
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
     return (
         <div className={'home'}>
             Добро пожаловать в webapp client
-            {user?.photo_url}
+            <ProgressBar/>
         </div>
     );
 };
