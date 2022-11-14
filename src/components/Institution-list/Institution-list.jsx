@@ -1,7 +1,13 @@
 import React, {useState} from 'react';
-import './ProductList.css';
+import './Institution-list.css.css';
+import Institution from "../Instituoin/Institution";
 import {useTelegram} from "../../hooks/useTelegram";
-import {useCallback, useEffect} from "react";
+
+const getTotalPrice = (items = []) => {
+    return items.reduce((acc, item) => {
+        return acc += item.price
+    }, 0)
+}
 
 const products = [
     {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
@@ -14,38 +20,9 @@ const products = [
     {id: '8', title: 'Куртка 5', price: 12000, description: 'Зеленого цвета, теплая'},
 ]
 
-const getTotalPrice = (items = []) => {
-    return items.reduce((acc, item) => {
-        return acc += item.price
-    }, 0)
-}
-
-const List = () => {
+const InstitutionList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg, queryId} = useTelegram();
-
-    const onSendData = useCallback(() => {
-        const data = {
-            products: addedItems,
-            totalPrice: getTotalPrice(addedItems),
-            queryId,
-        }
-        fetch('http://85.119.146.179:8000/web-data', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data)
-        })
-    }, [addedItems])
-
-    useEffect(() => {
-        tg.onEvent('mainButtonClicked', onSendData)
-        return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
-        }
-    }, [onSendData])
-
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
         let newItems = [];
@@ -71,7 +48,7 @@ const List = () => {
     return (
         <div className={'list'}>
             {products.map(item => (
-                <ProductItem
+                <Institution
                     product={item}
                     onAdd={onAdd}
                     className={'item'}
@@ -81,4 +58,4 @@ const List = () => {
     );
 };
 
-export default List;
+export default InstitutionList;
