@@ -9,7 +9,6 @@ const Header = () => {
     return (
         <div className={'header'}>
             <Button onClick={onClose}>Закрыть</Button>
-            <img src={user?.photo} alt='kek'/>
             <span className={'username'}>
                 {user?.username}
             </span>
