@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from "../Button/Button";
 import './Institution.css';
-import InstitutionList from "../Institution-list/Institution-list";
 
 
 const Institution = ({product, className, onAdd}) => {
@@ -21,7 +20,6 @@ const Institution = ({product, className, onAdd}) => {
             <Button className={'add-btn'} onClick={onAddHandler}>
                 Добавить в корзину
             </Button>
-            <InstitutionList></InstitutionList>
         </div>
     );
 };
