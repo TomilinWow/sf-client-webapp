@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import './Institution-list.css.css';
-import Institution from "../Institution/Institution";
+import './Institution-list.css';
 import {useTelegram} from "../../hooks/useTelegram";
+import Item from "../Item/Item";
 
 
 const getTotalPrice = (items = []) => {
@@ -52,7 +52,7 @@ const InstitutionList = () => {
     return (
         <div className={'list'}>
             {products.map(item => (
-                <Institution
+                <Item
                     product={item}
                     onAdd={onAdd}
                     className={'item'}
