@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import './Institution-list.css.css';
-import Institution from "../Institution/Institution";
+import './Institution-list.css';
 import {useTelegram} from "../../hooks/useTelegram";
+import Item from "../Item/Item";
 
 
 const getTotalPrice = (items = []) => {
@@ -21,14 +21,14 @@ const products = [
     {id: '8', title: 'Куртка 5', price: 12000, description: 'Зеленого цвета, теплая'},
 ]
 
-const InstitutionList = () => {
+const ItemList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg} = useTelegram();
 
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
-        let newItems=[];
+        let newItems;
 
         if(alreadyAdded) {
             newItems = addedItems.filter(item => item.id !== product.id);
@@ -52,7 +52,7 @@ const InstitutionList = () => {
     return (
         <div className={'list'}>
             {products.map(item => (
-                <Institution
+                <Item
                     product={item}
                     onAdd={onAdd}
                     className={'item'}
@@ -62,4 +62,4 @@ const InstitutionList = () => {
     );
 };
 
-export default InstitutionList;
+export default ItemList;
