@@ -27,6 +27,7 @@ const Home = () => {
 
             <Button className='stars' onClick={getStars}>Избранные заведения</Button>
             <Button>Поиск заведения</Button>
+
         </div>
     );
 };
