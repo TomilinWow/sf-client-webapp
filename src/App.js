@@ -8,6 +8,7 @@ import Institution from "./components/Institution/Institution";
 import Stars from "./components/Stars/Stars";
 
 
+
 function App() {
     const {onToggleButton, tg} = useTelegram();
 
@@ -22,6 +23,9 @@ function App() {
                 <Route index element={<Home />}/>
                 <Route path={'stars'} element={<Stars />}/>
                 <Route path={'institution'} element={<Institution />}/>
+
+
+
             </Routes>
         </div>
     );
