@@ -11,9 +11,6 @@ const Institution = ({product, className, onAdd}) => {
 
     return (
         <div className={'product ' + className}>
-            <h3>title</h3>
-            <h4>Каталог:</h4>
-
             <div className={'img'}/>
             <div className={'title'}>{product.title}</div>
             <div className={'description'}>{product.description}</div>
@@ -23,9 +20,7 @@ const Institution = ({product, className, onAdd}) => {
             <Button className={'add-btn'} onClick={onAddHandler}>
                 Добавить в корзину
             </Button>
-
         </div>
-
     );
 };
 

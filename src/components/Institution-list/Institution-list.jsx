@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './Institution-list.css.css';
-import Institution from "../Instituoin/Institution";
+import Institution from "../Institution/Institution";
 import {useTelegram} from "../../hooks/useTelegram";
 
 const getTotalPrice = (items = []) => {
     return items.reduce((acc, item) => {
-        return acc += item.price
+        return acc + item.price
     }, 0)
 }
 
@@ -22,10 +22,11 @@ const products = [
 
 const InstitutionList = () => {
     const [addedItems, setAddedItems] = useState([]);
-    const {tg, queryId} = useTelegram();
+    const {tg} = useTelegram();
+    tg.MainButton = undefined;
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
-        let newItems = [];
+        let newItems;
 
         if(alreadyAdded) {
             newItems = addedItems.filter(item => item.id !== product.id);
@@ -44,6 +45,7 @@ const InstitutionList = () => {
             })
         }
     }
+
 
     return (
         <div className={'list'}>
