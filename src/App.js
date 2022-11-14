@@ -20,8 +20,8 @@ function App() {
             <Header />
             <Routes>
                 <Route index element={<Home />}/>
-                <Route index element={<Stars />}/>
-                <Route index element={<Institution />}/>
+                <Route path={'stars'} element={<Stars />}/>
+                <Route path={'institution'} element={<Institution />}/>
             </Routes>
         </div>
     );
