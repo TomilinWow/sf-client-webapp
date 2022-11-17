@@ -6,7 +6,15 @@ const Item = ({product, className, onAdd}) => {
     const onAddHandler = () => {
         onAdd(product);
     }
-     const [counter,setCounter]= useState(0);
+    const [counter, setCounter] = useState(0)
+
+    const handleClick1 = () => {
+    setCounter(counter + 1)
+    }
+
+     const handleClick2 = () => {
+     setCounter(counter - 1)
+     }
 
     return (
         <div className={'product ' + className}>
@@ -20,7 +28,9 @@ const Item = ({product, className, onAdd}) => {
                 Добавить в корзину
             </Button>
             <Counter>{counter}</Counter>
-            <Button onClick={()=>setCounter(conter+1)}>+</Button>
+            <Button onClick={handleClick1}>+</Button>
+            <Button onClick={handleClick2}>-</Button>
+
         </div>
     );
 };

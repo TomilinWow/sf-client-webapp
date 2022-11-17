@@ -17,6 +17,9 @@ const Home = () => {
     }
 
 
+
+
+
     return (
         <div className={'home'}>
             <h3>Добро пожаловать в webapp client</h3>
@@ -27,6 +30,7 @@ const Home = () => {
 
             <Button className={'stars'} onClick={getStars}>Избранные заведения</Button>
             <Button  >Поиск заведения</Button>
+
 
         </div>
     );

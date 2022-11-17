@@ -2,7 +2,7 @@ import React from 'react';
 import Institution from "../Institution/Institution";
 import Button from "../Button/Button";
 import {useNavigate} from "react-router-dom";
-import './Home.css';
+
 
 const Stars = () => {
 
