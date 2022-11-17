@@ -25,8 +25,8 @@ const Home = () => {
                 <ProgressBar/>
             </div>
 
-            <Button className='stars' onClick={getStars}>Избранные заведения</Button>
-            <Button>Поиск заведения</Button>
+            <Button className={'stars'} onClick={getStars}>Избранные заведения</Button>
+            <Button  >Поиск заведения</Button>
 
         </div>
     );
