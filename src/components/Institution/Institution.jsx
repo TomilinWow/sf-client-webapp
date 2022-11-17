@@ -8,7 +8,7 @@ const Institution = () => {
 
     return (
         <div>
-            <h2>Заведение:</h2>
+            <h2>Меню:</h2>
             <ItemList/>
         </div>
     );
