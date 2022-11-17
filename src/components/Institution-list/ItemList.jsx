@@ -49,6 +49,8 @@ const InstitutionList = () => {
     }
 
 
+
+
     return (
         <div className={'list'}>
             {products.map(item => (
@@ -63,3 +65,4 @@ const InstitutionList = () => {
 };
 
 export default InstitutionList;
+
