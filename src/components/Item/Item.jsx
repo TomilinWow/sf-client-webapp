@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from "../Button/Button";
 
 const Item = ({product, className, onAdd}) => {
@@ -27,7 +27,7 @@ const Item = ({product, className, onAdd}) => {
             <Button className={'add-btn'} onClick={onAddHandler}>
                 Добавить в корзину
             </Button>
-            <Counter>{counter}</Counter>
+            <div>{counter}</div>
             <Button onClick={handleClick1}>+</Button>
             <Button onClick={handleClick2}>-</Button>
 
