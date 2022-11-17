@@ -53,8 +53,9 @@ const InstitutionList = () => {
 
     return (
         <div className={'list'}>
-            {products.map(item => (
+            {products.map((item, index) => (
                 <Item
+                    key={item.id}
                     product={item}
                     onAdd={onAdd}
                     className={'item'}

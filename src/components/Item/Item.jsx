@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Button from "../Button/Button";
-
+import './Item.css';
 const Item = ({product, className, onAdd}) => {
 
     const onAddHandler = () => {
@@ -9,12 +9,12 @@ const Item = ({product, className, onAdd}) => {
     const [counter, setCounter] = useState(0)
 
     const handleClick1 = () => {
-    setCounter(counter + 1)
+        setCounter(counter + 1)
     }
 
-     const handleClick2 = () => {
-     setCounter(counter - 1)
-     }
+    const handleClick2 = () => {
+        setCounter(counter - 1)
+    }
 
     return (
         <div className={'product ' + className}>
@@ -28,8 +28,8 @@ const Item = ({product, className, onAdd}) => {
                 Добавить в корзину
             </Button>
             <div>{counter}</div>
-            <Button onClick={handleClick1}>+</Button>
-            <Button onClick={handleClick2}>-</Button>
+            <Button className={'add-btn'} onClick={handleClick1}>+</Button>
+            <Button className={'add-btn'} onClick={handleClick2}>-</Button>
 
         </div>
     );
