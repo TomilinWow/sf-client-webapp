@@ -27,7 +27,11 @@ const Item = ({product, className, onAdd}) => {
             <Button className={'add-btn'} onClick={onAddHandler}>
                 Добавить в корзину
             </Button>
-            <div>{counter}</div>
+            {
+                counter > 0
+                    ? <div>{counter}</div>
+                    : null
+            }
             <Button className={'add-btn'} onClick={handleClick1}>+</Button>
             <Button className={'add-btn'} onClick={handleClick2}>-</Button>
 
