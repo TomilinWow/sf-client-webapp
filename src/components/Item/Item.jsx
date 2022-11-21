@@ -6,9 +6,13 @@ const Item = ({product, className, onAdd}) => {
 
     const history = useNavigate()
 
+    const addCart = () =>{
+        history('/Cart')
+    }
+
     const onAddHandler = () => {
         onAdd(product);
-        history('/Cart')
+
     }
     const [counter, setCounter] = useState(0)
 
@@ -38,6 +42,7 @@ const Item = ({product, className, onAdd}) => {
             }
             <Button className={'add-btn'} onClick={handleClick1}>+</Button>
             <Button className={'add-btn'} onClick={handleClick2}>-</Button>
+            <Button className={'add-btn'} onClick={addCart}>CART</Button>
 
         </div>
     );
