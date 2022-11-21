@@ -10,6 +10,8 @@ const getTotalPrice = (items = []) => {
     }, 0)
 }
 
+
+
 const products = [
     {id: '1', title: 'Пирог', price: 30, description: 'С мясом'},
     {id: '2', title: 'Пирог', price: 30, description: 'С мясом'},
@@ -64,6 +66,8 @@ const InstitutionList = () => {
         </div>
     );
 };
+
+
 
 export default InstitutionList;
 

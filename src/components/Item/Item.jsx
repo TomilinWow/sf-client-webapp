@@ -10,10 +10,7 @@ const Item = ({product, className, onAdd}) => {
         history('/Cart')
     }
 
-    // const onAddHandler = () => {
-    //     onAdd(product);
-    //
-    // }
+
     const [counter, setCounter] = useState(0)
 
     const handleClick1 = () => {
