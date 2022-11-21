@@ -10,18 +10,22 @@ const Item = ({product, className, onAdd}) => {
         history('/Cart')
     }
 
-    const onAddHandler = () => {
-        onAdd(product);
-
-    }
+    // const onAddHandler = () => {
+    //     onAdd(product);
+    //
+    // }
     const [counter, setCounter] = useState(0)
 
     const handleClick1 = () => {
-        setCounter(counter + 1)
+        setCounter(counter + 1);
+        onAdd(product);
+
     }
 
     const handleClick2 = () => {
-        setCounter(counter - 1)
+        setCounter(counter - 1);
+        onAdd(product);
+
     }
 
     return (
@@ -32,7 +36,7 @@ const Item = ({product, className, onAdd}) => {
             <div className={'price'}>
                 <span>Стоимость: <b>{product.price}</b></span>
             </div>
-            <Button className={'add-btn'} onClick={onAddHandler}>
+            <Button className={'add-btn'} onClick={addCart}>
                 Добавить в корзину
             </Button>
             {
@@ -42,7 +46,7 @@ const Item = ({product, className, onAdd}) => {
             }
             <Button className={'add-btn'} onClick={handleClick1}>+</Button>
             <Button className={'add-btn'} onClick={handleClick2}>-</Button>
-            <Button className={'add-btn'} onClick={addCart}>CART</Button>
+
 
         </div>
     );
