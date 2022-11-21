@@ -12,6 +12,7 @@ export const  Car =({product, className,}) => {
             <div className={'price'}>
                 <span>Стоимость: <b>{product.price}</b></span>
             </div>
+        </div>
     </div>
     );
 };
