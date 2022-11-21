@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import Button from "../Button/Button";
 import './Item.css';
+import {useNavigate} from "react-router-dom";
 const Item = ({product, className, onAdd}) => {
+
+    const history = useNavigate()
 
     const onAddHandler = () => {
         onAdd(product);
+        history('/Cart')
     }
     const [counter, setCounter] = useState(0)
 
