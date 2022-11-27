@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './Institution-list.css';
 import {useTelegram} from "../../hooks/useTelegram";
 import Item from "../Item/Item";
+import axios, {Axios} from "axios";
 
 
 const getTotalPrice = (items = []) => {
@@ -12,20 +13,28 @@ const getTotalPrice = (items = []) => {
 
 
 
-const products = [
-    {id: '1', title: 'Пирог', price: 30, description: 'С мясом'},
-    {id: '2', title: 'Пирог', price: 30, description: 'С мясом'},
-    {id: '3', title: 'Пирог', price: 30, description: 'С мясом'},
-    {id: '4', title: 'Пирог', price: 30, description: 'С мясом'},
-    {id: '5', title: 'Пирог', price: 30, description: 'С мясом'},
-    {id: '6', title: 'Пирог', price: 30, description: 'С мясом'},
-    {id: '7', title: 'Пирог', price: 30, description: 'С мясом'},
-    {id: '8', title: 'Пирог', price: 30, description: 'С мясом'},
-]
 
 const InstitutionList = () => {
     const [addedItems, setAddedItems] = useState([]);
     const {tg} = useTelegram();
+
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        const apiCatalog = 'http://street.test/api/catalog';
+
+        axios.post(apiCatalog).then(function (response) {
+            const catalog = response.data;
+            setItems(catalog);
+        })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }, [setItems])
+
+    items.map(item => {
+        console.log(item.id)
+    })
 
 
     const onAdd = (product) => {
@@ -55,13 +64,14 @@ const InstitutionList = () => {
 
     return (
         <div className={'list'}>
-            {products.map((item, index) => (
-                <Item
+            {items.map((item) => (
+                <Item>
                     key={item.id}
                     product={item}
                     onAdd={onAdd}
                     className={'item'}
-                />
+                </Item>
+
             ))}
         </div>
     );
@@ -70,4 +80,5 @@ const InstitutionList = () => {
 
 
 export default InstitutionList;
+
 

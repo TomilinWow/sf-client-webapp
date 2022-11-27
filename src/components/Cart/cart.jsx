@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export const  Car =({product, className,}) => {
+export const  Cart =({product, className,}) => {
     return (
     <div>
         <h2>Корзина</h2>
